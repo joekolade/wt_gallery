@@ -1,0 +1,62 @@
+wt_gallery HTML Template for list view
+
+	--- Markers within loop ---
+	Imagetag (e.g. <img src="typo3temp/pic.jpg">):			###IMAGE###
+	Imagepath (e.g. typo3temp/pic.jpg):						###PICTURE###
+	Picture filename (e.g. pic.jpg):						###BASENAME###
+    Filename without extension (e.g. pic):					###FILENAME###
+    Extension (e.g. jpg):									###EXTENSION###
+    Relative path to this folder (e.g. fileadmin/folder/):	###DIRNAME###
+    Timestamp of current picture:							###TSTAMP###
+	Name of folder:											###CURRENTFOLDER###
+    Image text (from EXIF or txt file):						###TEXT###
+    Dynamic class (firstofrow, centerofrow, lastofrow):		###CLASS###
+	Define your own marker (look into the TS):				###ANYMARKER###
+    Subpart for Single view link:							<!-- ###SINGLELINK### -->Image<!-- ###SINGLELINK### -->
+    
+    --- Markers out of the loop ---
+    Inserts pagebrowser to Marker							###PAGEBROWSER###
+    
+
+	GLOBAL MARKERS:
+	Displaying any value from pi1/locallang.xml:			###WTGALLERY_LL_YOURFIELD### (Could be filled via locallang.xml or typoscript - see manual for details)
+	Displaying any value from typoscript:					###WTGALLERY_TS_YOURFIELD### (Could be filled via typoscript - see manual for details)
+	
+	
+	
+<!-- ###WTGALLERY_LIST### begin --> 
+    <div class="wtgallery_list_area">
+        <h2 class="wtgallery_list">###WTGALLERY_LL_TITLE_LIST###</h2>
+        <!-- ###CONTENT### --><!-- ###ITEM### -->
+            <div class="wtgallery_list ###CLASS###">
+                ###IMAGE###
+            </div>
+        <!-- ###ITEM### --><!-- ###CONTENT### -->
+        <div class="clear"></div>
+        ###PAGEBROWSER###
+    </div>
+<!-- ###WTGALLERY_LIST### end -->
+
+
+
+
+
+wt_gallery HTML Template for pagebrowser in listview
+
+	Current page - from X to...:						###CURRENT_MIN###
+    Current page - to X pictures:						###CURRENT_MAX###
+    Overall pictures on all pages: 						###OVERALL###
+    Insert HMENU:										###PAGELINKS###
+
+	GLOBAL MARKERS:
+	Displaying any value from pi1/locallang.xml:		###WTGALLERY_LL_YOURFIELD### (Could be filled via locallang.xml or typoscript - see manual for details)
+	Displaying any value from typoscript:				###WTGALLERY_TS_YOURFIELD### (Could be filled via typoscript - see manual for details)
+	
+	
+	
+<!-- ###WTGALLERY_LIST_PAGEBROWSER### begin --> 
+    <div class="wtgallery_list_pagebrowser_area">
+        <p>###CURRENT_MIN### ###WTGALLERY_LL_PAGEBROWSER_UPTO### ###CURRENT_MAX### ###WTGALLERY_LL_PAGEBROWSER_WITHIN### ###OVERALL###</p>
+        <p>###PAGELINKS###</p>
+    </div>
+<!-- ###WTGALLERY_LIST_PAGEBROWSER### end -->

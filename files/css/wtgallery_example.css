@@ -1,0 +1,38 @@
+div.tx-wtgallery-pi1 {
+	padding: 10px;
+	background-color: #ddd;
+}
+div.wt_gallery_single_inner_pic {
+	margin: 10px;
+	padding: 1px;
+}
+div.wt_gallery_single_inner_pic a img {
+	border: 1px solid #FF9900;
+}
+div.wtgallery_list {
+	padding: 1px;
+	margin: 10px;
+	background-color: #444;
+}
+div.wtgallery_list a img {
+	padding: 1px;
+	filter: alpha(opacity=66); 
+	-moz-opacity: 0.66; 
+	opacity: 0.66;
+	border: 1px solid #444;
+}
+div.wtgallery_list_current a img {
+	border: 1px solid #FF9900;
+}
+div.wtgallery_list a:hover img {
+	filter: alpha(opacity=100); 
+	-moz-opacity: 1.00; 
+	opacity: 1.00;
+}
+div.wt_gallery_single_inner_title {
+	font-weight: bold;
+	margin-top: 5px;
+}
+div.wt_gallery_single_inner_comments {
+
+}

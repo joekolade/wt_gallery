@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for extension 'wt_gallery'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="pi1_title">WT Gallery</label>
+			<label index="pi1_plus_wiz_description">Provides a gallery with separate Single- and Thumbnail-View</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="pi1_title">WT Galerie</label>
+			<label index="pi1_plus_wiz_description">Galerie mit getrennter Einzel- und Uebersichtsansicht</label>
+		</languageKey>
+	</data>
+</T3locallang>

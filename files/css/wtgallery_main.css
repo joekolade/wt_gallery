@@ -1,0 +1,11 @@
+div.clear {
+	clear: both;
+}
+div.wtgallery_list_area div.wtgallery_list,
+div.wtgallery_category_area div.wtgallery_categories {
+	float: left;
+}
+div.wtgallery_list_area div.wtgallery_list_firstofrow,
+div.wtgallery_category_area div.wtgallery_category_firstofrow {
+	clear: left;
+}

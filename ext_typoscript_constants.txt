@@ -1,0 +1,142 @@
+###
+# This are the default TS-constants for wt_gallery
+##
+
+plugin.wtgallery {
+	
+	# cat=plugin.wtgallery//0010; type=file[html,htm,tmpl,txt]; label= Template File single: HTML-template file for single view (see EXT:wt_gallery/templates/single.html for an example)
+	template.single = EXT:wt_gallery/templates/single.html
+	
+	# cat=plugin.wtgallery//0020; type=file[html,htm,tmpl,txt]; label= Template File list: HTML-template file for list view (see EXT:wt_gallery/templates/list.html for an example)
+	template.list = EXT:wt_gallery/templates/list.html
+	
+	# cat=plugin.wtgallery//0030; type=file[html,htm,tmpl,txt]; label= Template File category: HTML-template file for category view (see EXT:wt_gallery/templates/category.html for an example)
+	template.category = EXT:wt_gallery/templates/category.html
+	
+	# cat=plugin.wtgallery//0040; type=file[html,htm,tmpl,txt]; label= Template File cooliris: HTML-template file for cooliris view (see EXT:wt_gallery/templates/cooliris.html for an example)
+	template.cooliris = EXT:wt_gallery/templates/cooliris.html
+
+	# cat=plugin.wtgallery//1000; type=options[,single,list,latest]; label= Main Gallery mode: Define what the gallery should do - normally set via flexform in the plugin (e.g. single)
+	main.mode = 
+
+	# cat=plugin.wtgallery//1010; type=text; label= Main Picture path: Relative path to the pictures (e.g. fileadmin/pictures/)
+	main.path = 
+
+	# cat=plugin.wtgallery//1020; type=text; label= Main Allowed file extensions: Define all allowed file extensions of the picture path (not allowed files will be ignored) (default jpg,jpeg,gif,png)
+	main.file_extensions = jpg,jpeg,gif,png
+
+	# cat=plugin.wtgallery//1030; type=boolean; label= Main Parent DIV for rows: De/Activate a parent DIV container for every row of the list or category view (default 1)
+	main.DIVforRows = 1
+
+	# cat=plugin.wtgallery//2000; type=text; label= Single view PID: Set PID of single page (e.g. 5) (Note: Flexform value overwrite this setting!)
+	single.pid_single = 
+
+	# cat=plugin.wtgallery//2010; type=text; label= Single picture width: Default width of singlepicture (e.g. 500) (Note: Flexform value overwrite this setting!)
+	single.width = 500
+
+	# cat=plugin.wtgallery//2020; type=text; label= Single picture height: Default height of singlepicture (e.g. 500) (Note: Flexform value overwrite this setting!)
+	single.height =
+
+	# cat=plugin.wtgallery//2030; type=options[ASC,DESC,newest,oldest,random]; label= Single picture sorting: If no picture is chosen, the first picture is selected by one of the methods (ASC,DESC,newest,oldest,random)
+	single.order = ASC
+
+	# cat=plugin.wtgallery//2040; type=options[TXT/EXIF,EXIF/TXT,TXT,EXIF,]; label= Single metainformation: Show meta information of a single picture from textfile or from EXIF information (possibilities: TXT/EXIF,EXIF/TXT,TXT,EXIF or empty) (TXT/EXIF means - search for a txt file and if no info from txt than take EXIF information of picture)
+	single.metainformation = TXT/EXIF
+
+	# cat=plugin.wtgallery//3000; type=text; label= List view PID: Set PID of list page (e.g. 6) (Note: Flexform value overwrite this setting!)
+	list.pid_list = 
+
+	# cat=plugin.wtgallery//3010; type=text; label= List picture width: Default width of listpictures (e.g. 100) (Note: Flexform value overwrite this setting!)
+	list.width = 100
+
+	# cat=plugin.wtgallery//3020; type=text; label= List picture height: Default height of listpictures (e.g. 500) (Note: Flexform value overwrite this setting!)
+	list.height =
+
+	# cat=plugin.wtgallery//3030; type=text; label= List number of rows: Set the number of rows for listview (e.g. 3) (Note: Flexform value overwrite this setting!)
+	list.rows = 
+
+	# cat=plugin.wtgallery//3040; type=text; label= List number of columns: Set the number of columns for listview (e.g. 6) (Note: Flexform value overwrite this setting!)
+	list.columns = 
+
+	# cat=plugin.wtgallery//3050; type=options[ASC,DESC,newest,oldest,random]; label= List sorting: Define the sorting of the listview images (ASC,DESC,newest,oldest,random)
+	list.order = ASC
+
+	# cat=plugin.wtgallery//3060; type=text; label= Listview limit: Define a maximum limit of the listview images (e.g. 100) (empty for no limit)
+	list.limit = 
+
+	# cat=plugin.wtgallery//3070; type=options[TXT/EXIF,EXIF/TXT,TXT,EXIF,]; label= List metainformation: Show meta information of a list picture from textfile or from EXIF information (possibilities: TXT/EXIF,EXIF/TXT,TXT,EXIF or empty) (TXT/EXIF means - search for a txt file and if no info from txt than take EXIF information of picture)
+	list.metainformation = TXT/EXIF
+
+	# cat=plugin.wtgallery//4000; type=text; label= Category picture width: Default width of categorypictures (e.g. 80) (Note: Flexform value overwrite this setting!)
+	category.width = 80
+
+	# cat=plugin.wtgallery//4010; type=text; label= Category picture height: Default height of categorypictures (e.g. 500) (Note: Flexform value overwrite this setting!)
+	category.height =
+
+	# cat=plugin.wtgallery//4020; type=text; label= Category number of rows: Set the number of rows for categoryview (e.g. 3) (Note: Flexform value overwrite this setting!)
+	category.rows = 
+
+	# cat=plugin.wtgallery//4030; type=text; label= Category number of columns: Set the number of columns for categoryview (e.g. 6) (Note: Flexform value overwrite this setting!)
+	category.columns = 
+
+	# cat=plugin.wtgallery//4040; type=options[ASC,DESC,random]; label= Category sorting: Define the sorting of the categories itselve (ASC,DESC,random)
+	category.order = ASC
+
+	# cat=plugin.wtgallery//4050; type=text; label= Category limit: Define a maximum limit of the category images (e.g. 100) (empty for no limit)
+	category.limit = 
+
+	# cat=plugin.wtgallery//4060; type=options[ASC,DESC,newest,oldest,random]; label= Category image sorting: If no special picture is chosen, any picture of the folder will be chosen (ASC,DESC,newest,oldest,random)
+	category.previewpicture_order = random
+
+	# cat=plugin.wtgallery//4070; type=options[TXT/EXIF,EXIF/TXT,TXT,EXIF,]; label= Category metainformation: Show meta information of a category picture from textfile or from EXIF information (possibilities: TXT/EXIF,EXIF/TXT,TXT,EXIF or empty) (TXT/EXIF means - search for a txt file and if no info from txt than take EXIF information of picture)
+	category.metainformation = TXT/EXIF
+
+	# cat=plugin.wtgallery//4080; type=text; label= Category force folder: If you want to force a folder for your categories, you can enter a folder (e.g. fileadmin/pics/). This could be useful, if you want to always show your categories - even on list- and singleview!
+	category.forceFolder = 
+
+	# cat=plugin.wtgallery//5000; type=text; label= Cooliris title: Define a title for the cooliris view (e.g. This is the title)
+	cooliris.title = wt_gallery for cooliris
+
+	# cat=plugin.wtgallery//5010; type=text; label= Cooliris url: Define an URL for the cooliris view (e.g. http://www.domain.org/)
+	cooliris.url = http://www.cooliris.com/
+
+	# cat=plugin.wtgallery//5020; type=text; label= Cooliris description: Define a description for the cooliris view (e.g. This is the description)
+	cooliris.description = This is the wt_gallery cooliris description...
+
+	# cat=plugin.wtgallery//5030; type=text; label= Cooliris picture width: Default width of coolirispictures (e.g. 500)
+	cooliris.width = 500
+
+	# cat=plugin.wtgallery//5040; type=text; label= Cooliris picture height: Default height of coolirispictures (e.g. 500)
+	cooliris.height =
+
+	# cat=plugin.wtgallery//5050; type=options[ASC,DESC,newest,oldest,random]; label= Cooliris sorting: Define the sorting of the coolirisview images (ASC,DESC,newest,oldest,random)
+	cooliris.order = ASC
+
+	# cat=plugin.wtgallery//5060; type=text; label= Cooliris limit: Define a maximum limit of the coolirisview images (e.g. 100) (empty for no limit)
+	cooliris.limit = 
+
+	# cat=plugin.wtgallery//5070; type=text; label= Cooliris SWF path: Define a path for cooliris SWF file (e.g. EXT:wt_gallery/files/swf/cooliris.swf)
+	cooliris.swf = EXT:wt_gallery/files/swf/cooliris.swf
+
+	# cat=plugin.wtgallery//5080; type=int; label= Cooliris window width: Define width of the flash window in Frontend (e.g. 800) (Note: Flexform value overwrite this setting!)
+	cooliris.window_width = 800
+
+	# cat=plugin.wtgallery//5090; type=int; label= Cooliris window height: Define height of the flash window in Frontend (e.g. 600) (Note: Flexform value overwrite this setting!)
+	cooliris.window_height = 600
+
+	# cat=plugin.wtgallery//5100; type=boolean; label= Cooliris fullscreen button: Enable fullscreen button in cooliris flash window
+	cooliris.allow_fullscreen = 1
+
+	# cat=plugin.wtgallery//5110; type=boolean; label= Cooliris scriptaccess button: Enable scriptaccess button in cooliris flash window
+	cooliris.allow_scriptaccess = 0
+
+	# cat=plugin.wtgallery//5120; type=text; label= Cooliris flashvars: Add some cooliris flashvars if you want (e.g. &numRows=5&style=light) - see whole list at http://developer.cooliris.com/?p=embed/flash
+	cooliris.flashvars = 
+
+	# cat=plugin.wtgallery//5130; type=text; label= Cooliris No-Flash message: Define a message if no flash was found in the browser
+	cooliris.noflash_message = <a href="http://www.adobe.com/go/getflashplayer">Get Adobe Flash</a>
+
+	# cat=plugin.wtgallery//5140; type=options[TXT/EXIF,EXIF/TXT,TXT,EXIF,]; label= Cooliris metainformation: Show meta information of the listed picture from textfile or from EXIF information (possibilities: TXT/EXIF,EXIF/TXT,TXT,EXIF or empty) (TXT/EXIF means - search for a txt file and if no info from txt than take EXIF information of picture) (You have to make some changes in the cooliris.html as you want)
+	cooliris.metainformation = TXT/EXIF
+		
+}

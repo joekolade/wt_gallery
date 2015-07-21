@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'wt_gallery'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tt_content.list_type_pi1">WT Gallery</label>
+			<label index="pi_flexform.sheet_main">Main Configuration</label>
+			<label index="pi_flexform.sheet_single">Single</label>
+			<label index="pi_flexform.sheet_list">List</label>
+			<label index="pi_flexform.sheet_latest">Latest</label>
+			<label index="pi_flexform.sheet_category">Category</label>
+			<label index="pi_flexform.sheet_cooliris">Cooliris</label>
+			<label index="pi_flexform.mode">Show:</label>
+			<label index="pi_flexform.mode.0">Single</label>
+			<label index="pi_flexform.mode.1">List</label>
+			<label index="pi_flexform.mode.2">Latest</label>
+			<label index="pi_flexform.mode.3">Category</label>
+			<label index="pi_flexform.mode.4">Cooliris listview</label>
+			<label index="pi_flexform.path">Pic Folder (e.g. fileadmin/pics/)</label>
+			<label index="pi_flexform.width">Picture width</label>
+			<label index="pi_flexform.height">Picture height</label>
+			<label index="pi_flexform.window_width">Width of cooliris window (px)</label>
+			<label index="pi_flexform.window_height">Height of cooliris window (px)</label>
+			<label index="pi_flexform.columns">Number of columns</label>
+			<label index="pi_flexform.rows">Number of rows</label>
+			<label index="pi_flexform.pid_single">Page with single view (empty = same page)</label>
+			<label index="pi_flexform.pid_list">Page with list view (empty = same page)</label>
+			<label index="pi_flexform.pid_category">Page with category view (empty = same page)</label>
+			<label index="pi_flexform.pid_latest">Page with latest view (empty = same page)</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="tt_content.list_type_pi1">WT Galerie</label>
+			<label index="pi_flexform.sheet_main">Haupteinstellungen</label>
+			<label index="pi_flexform.sheet_single">Single</label>
+			<label index="pi_flexform.sheet_list">Liste</label>
+			<label index="pi_flexform.sheet_latest">Letzte (Latest)</label>
+			<label index="pi_flexform.sheet_category">Kategorie</label>
+			<label index="pi_flexform.sheet_cooliris">Cooliris</label>
+			<label index="pi_flexform.mode">Anzeige:</label>
+			<label index="pi_flexform.mode.0">Single</label>
+			<label index="pi_flexform.mode.1">Liste</label>
+			<label index="pi_flexform.mode.2">Letzte (Latest)</label>
+			<label index="pi_flexform.mode.3">Kategorien</label>
+			<label index="pi_flexform.mode.4">Cooliris Listenansicht</label>
+			<label index="pi_flexform.path">Bild Verzeichnis (z.B. fileadmin/pics/)</label>
+			<label index="pi_flexform.width">Bildbreite</label>
+			<label index="pi_flexform.height">Bildhöhe</label>
+			<label index="pi_flexform.window_width">Breite des Cooliris Fensters (px)</label>
+			<label index="pi_flexform.window_height">Höhe des Cooliris Fensters (px)</label>
+			<label index="pi_flexform.columns">Anzahl Spalten</label>
+			<label index="pi_flexform.rows">Anzahl Zeilen</label>
+			<label index="pi_flexform.pid_single">Seite mit Singleansicht (leer = gleiche Seite)</label>
+			<label index="pi_flexform.pid_list">Seite mit Listenansicht (leer = gleiche Seite)</label>
+			<label index="pi_flexform.pid_category">Seite mit Kategorieansicht (leer = gleiche Seite)</label>
+			<label index="pi_flexform.pid_latest">Seite mit Ansicht der Letzen Bilder (leer = gleiche Seite)</label>
+		</languageKey>
+	</data>
+</T3locallang>

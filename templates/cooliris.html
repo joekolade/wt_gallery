@@ -1,0 +1,50 @@
+wt_gallery HTML Template for cooliris rss
+
+	--- Markers within loop ---
+	Picture resource (like typo3temp/picture.jpg)			###IMAGE###
+	Picture filename (e.g. pic.jpg):						###BASENAME###
+    Filename without extension (e.g. pic):					###FILENAME###
+    Extension (e.g. jpg):									###EXTENSION###
+    Relative path to this folder (e.g. fileadmin/folder/):	###DIRNAME###
+    Timestamp of current picture:							###TSTAMP###
+	Name of folder:											###CURRENTFOLDER###
+	Text from EXIF or TXT file - comments:					###COMMENTS###
+	Text from EXIF or TXT file - title:						###TITLE###
+	Text from EXIF or TXT file - subject:					###SUBJECT###
+	Text from EXIF or TXT file - author:					###AUTHOR###
+	Text from EXIF or TXT file - recordtime:				###RECORDTIME###
+	Text from EXIF or TXT file - cam_brand:					###CAM_BRAND###
+	Text from EXIF or TXT file - cam_model:					###CAM_MODEL###
+    
+    --- Markers out of loop ---
+    ###TITLE###
+    ###URL###
+    ###DESCRIPTION###
+    
+
+	GLOBAL MARKERS:
+	Displaying any value from pi1/locallang.xml:			###WTGALLERY_LL_YOURFIELD### (Could be filled via locallang.xml or typoscript - see manual for details)
+	Displaying any value from typoscript:					###WTGALLERY_TS_YOURFIELD### (Could be filled via typoscript - see manual for details)
+    
+    
+<!-- ###WTGALLERY_COOLIRIS_RSS### begin --> 
+    <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    <rss version="2.0" xmlns:media="http://search.yahoo.com/mrss" xmlns:atom="http://www.w3.org/2005/Atom">
+        <channel>
+                <title>wt_gallery</title>
+                <link>http://testumgebung.einpraegsam.net/</link>
+                <description>Description</description>
+                
+                <!-- ###CONTENT### --><!-- ###ITEM### -->
+                    <item>
+						<title>###FILENAME###</title>
+            			<link>###IMAGE###</link>
+                        <guid>###FILENAME###</guid>
+                        <media:thumbnail url="###IMAGE###" />
+                        <media:content url="###IMAGE###" type="image/jpeg" />
+                    </item>
+                <!-- ###ITEM### --><!-- ###CONTENT### -->
+        
+        </channel>
+    </rss>
+<!-- ###WTGALLERY_COOLIRIS_RSS### end --> 

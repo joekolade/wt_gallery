@@ -1,0 +1,40 @@
+wt_directory HTML Template for single view
+
+	Imagetag (e.g. <img src="typo3temp/pic.jpg">):		###IMAGE###
+    Image text (from EXIF or txt file):					###TEXT###
+    Picture (e.g. fileadmin/pics/pic.jpg):				###PICTURE###
+    Filename (e.g. pic):								###FILENAME###
+    Dirname (e.g. fileadmin/pics):						###DIRNAME###
+    Name of folder:										###CURRENTFOLDER###
+    Basename (e.g. pic.jpg):							###BASENAME###
+    Extension (e.g. jpg):								###EXTENSION###
+    Timestamp of changedate:							###TSTAMP###
+    Insert link to listview (define via TS):			###LISTVIEWLINK###
+	Define your own marker (look into the TS):			###ANYMARKER###
+    Subpart for next link:								<!-- ###NEXT### -->Next<!-- ###NEXT### -->
+    Subpart for previous link:							<!-- ###PREVIOUS### -->Previous<!-- ###PREVIOUS### -->
+    
+
+	GLOBAL MARKERS:
+	Displaying any value from pi1/locallang.xml:		###WTGALLERY_LL_YOURFIELD### (Could be filled via locallang.xml or typoscript - see manual for details)
+	Displaying any value from typoscript:				###WTGALLERY_TS_YOURFIELD### (Could be filled via typoscript - see manual for details)
+
+
+
+<!-- ###WTGALLERY_SINGLE### begin -->
+	<div class="wtgallery wtgallery_single wt_gallery_single_###FILENAME###">
+		<h2 class="wtgallery_single">###WTGALLERY_LL_TITLE_SINGLE###</h2>
+        ###IMAGE###
+        ###XXX###
+        <div class="wtgallery_single_browser">
+        	<div class="wtgallery_single_browser_previous">
+            	<!-- ###PREVIOUS### -->###WTGALLERY_LL_PREVIOUS###<!-- ###PREVIOUS### -->
+            </div>
+            <div class="wtgallery_single_browser_next">
+            	<!-- ###NEXT### -->###WTGALLERY_LL_NEXT###<!-- ###NEXT### -->
+            </div>
+        </div>
+        ###TEXT###
+        ###LISTVIEWLINK###
+    </div>
+<!-- ###WTGALLERY_SINGLE### end -->

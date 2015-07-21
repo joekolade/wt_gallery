@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for plugin 'tx_wtgallery_pi1'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="wtgallery_ll_title_category">Categories of Gallery</label>
+			<label index="wtgallery_ll_title_list">Gallery list view</label>
+			<label index="wtgallery_ll_title_single">Gallery single view</label>
+			<label index="wtgallery_ll_startcategorylink">Back to first category</label>
+			<label index="wtgallery_ll_listviewlink">Back to listview</label>
+			<label index="wtgallery_ll_pagebrowser_upto">up to</label>
+			<label index="wtgallery_ll_pagebrowser_within">within</label>
+			<label index="wtgallery_ll_pagebrowser_page">Page %s</label>
+			<label index="wtgallery_ll_pagebrowser_next">Next</label>
+			<label index="wtgallery_ll_pagebrowser_previous">Previous</label>
+			<label index="wtgallery_ll_coolirisError">Error in generating cooliris RSS on current page, because there are no pictures in the listview!</label>
+			<label index="wtgallery_ll_coolirisErrorNoPath">Please set the startpath via typoscript and not only in the plugin - this is needed for cooliris!</label>
+			<label index="wtgallery_ll_next">Next Picture</label>
+			<label index="wtgallery_ll_previous">Previous Picture</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="wtgallery_ll_title_category">Galeriekategorien</label>
+			<label index="wtgallery_ll_title_list">Listenansicht</label>
+			<label index="wtgallery_ll_title_single">Einzelansicht</label>
+			<label index="wtgallery_ll_startcategorylink">Zurück zur ersten Kategorie</label>
+			<label index="wtgallery_ll_listviewlink">Zurück zur Listenansicht</label>
+			<label index="wtgallery_ll_pagebrowser_upto">bis</label>
+			<label index="wtgallery_ll_pagebrowser_within">von insgesamt</label>
+			<label index="wtgallery_ll_pagebrowser_page">Seite %s</label>
+			<label index="wtgallery_ll_pagebrowser_next">Weiter</label>
+			<label index="wtgallery_ll_pagebrowser_previous">Zurück</label>
+			<label index="wtgallery_ll_coolirisError">Auf der aktuellen Seite befinden sich keine Bilder in der Listenansicht, somit kann kein cooliris RSS erzeugt werden!</label>
+			<label index="wtgallery_ll_coolirisErrorNoPath">Bitte den Ausgangspfad über Typoscript setzen und nicht nur über das Plugin, sonst kann das RSS für cooliris nicht erzeugt werden!</label>
+			<label index="wtgallery_ll_next">Nächstes Bild</label>
+			<label index="wtgallery_ll_previous">Vorheriges Bild</label>
+		</languageKey>
+		<languageKey index="it" type="array">
+			<label index="wtgallery_ll_title_category">Lista delle categorie</label>
+			<label index="wtgallery_ll_title_list">Lista</label>
+			<label index="wtgallery_ll_title_single">Particolare</label>
+			<label index="wtgallery_ll_startcategorylink">Vai alla lista delle start categorie</label>
+			<label index="wtgallery_ll_listviewlink">Vai alla lista</label>
+			<label index="wtgallery_ll_pagebrowser_upto">fino a</label>
+			<label index="wtgallery_ll_pagebrowser_within">in tutto</label>
+			<label index="wtgallery_ll_pagebrowser_page">Pagina %s</label>
+			<label index="wtgallery_ll_next">Immagine successiva</label>
+			<label index="wtgallery_ll_previous">Immagine precedente</label>
+		</languageKey>
+	</data>
+</T3locallang>

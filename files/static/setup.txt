@@ -1,0 +1,3 @@
+page {
+	includeCSS.file3139 = EXT:wt_gallery/files/css/wtgallery_example.css
+}

@@ -1,0 +1,5 @@
+# cat=basic/enable/010; type=boolean; label= Picture Path Textfield: On some older TYPO3 systems, you cannot select the picture path in the plugin. You can enable the old-style text field and insert the path manually (fileadmin/path/)
+picturePathTextField = 0
+
+# cat=basic/enable/020; type=boolean; label= Readable URL with realurl: If you use realurl and want to see real category- and picuturenames, you can enable this feature. Please add some lines to your realurlconf to show postVarSets as Foldernames (/gallery/123456789.html will be rewritten to /gallery/categoryname.html). This function needs some server performance! Note: This function is still in a alpha status
+readableURL = 0

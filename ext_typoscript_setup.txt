@@ -1,0 +1,386 @@
+# WT_GALLERY PLUGIN #
+includeLibs.user_wtgallery_pagebrowser = EXT:wt_gallery/lib/user_wtgallery_pagebrowser.php
+
+# main settings
+plugin.tx_wtgallery_pi1 {
+	
+	# Constants
+	template.single = {$plugin.wtgallery.template.single}
+	template.category = {$plugin.wtgallery.template.category}
+	template.list = {$plugin.wtgallery.template.list}
+	template.cooliris = {$plugin.wtgallery.template.cooliris}
+	main.mode = {$plugin.wtgallery.main.mode}
+	main.path = {$plugin.wtgallery.main.path}
+	main.file_extensions = {$plugin.wtgallery.main.file_extensions}
+	main.DIVforRows = {$plugin.wtgallery.main.DIVforRows}
+	
+	
+	
+	# Single view settings
+	single {
+		# Constants
+		pid_single = {$plugin.wtgallery.single.pid_single}
+		width = {$plugin.wtgallery.single.width}
+		height = {$plugin.wtgallery.single.height}
+		order = {$plugin.wtgallery.single.order}
+		metainformation = {$plugin.wtgallery.single.metainformation}
+		
+		
+		# Single image
+		image = IMAGE
+		image {
+			# available variables for .field are: 
+				# Information from the pic: picture, tstamp, filename, dirname, basename, extension
+				# Information from txt/EXIF: comments, title, subject, author, recordtime, cam_brand, cam_model
+			wrap = <div class="wt_gallery_single_inner_pic">|</div>
+			file.import.field = picture
+			file.width = {$plugin.wtgallery.single.width}
+			file.height = {$plugin.wtgallery.single.height}
+			altText.field = basename
+			titleText.field = filename
+			params = class="wtgallery wtgallery_single"
+			if.isTrue.field = picture
+			
+			# popup definition
+			imageLinkWrap = 1
+			imageLinkWrap.enable = 1
+			imageLinkWrap {
+				bodyTag = <body style="background-color: black;">
+				wrap = <a href="javascript:close();">|</a>
+				JSwindow = 1
+				JSwindow.newWindow = 1
+			}
+		}
+		
+		
+		# Text from txt file or EXIF information to single image
+		text = COA
+		text {
+			# available variables for .field are: 
+				# Information from the pic: picture, tstamp, filename, dirname, basename, extension
+				# Information from txt/EXIF: comments, title, subject, author, recordtime, cam_brand, cam_model
+			wrap = <div class="wt_gallery_single_inner_text">|</div>
+			if.isTrue.field = title
+			
+			10 = TEXT
+			10.field = title
+			10.wrap = <div class="wt_gallery_single_inner_title">|</div>
+			10.if.isTrue.field = title
+			
+			20 = TEXT
+			20.field = comments
+			20.wrap = <div class="wt_gallery_single_inner_comments">|</div>
+			20.if.isTrue.field = comments
+		}
+		
+		
+		# Link to the listview below picture (only if listview and singleview are not on the same page)
+		# available variables for .field are: listview_link
+		listviewlink = TEXT
+		listviewlink {
+			wrap = <p>|</p>
+			data = LLL:EXT:wt_gallery/pi1/locallang.xml:wtgallery_ll_listviewlink
+			typolink.parameter.field = listview_link
+			if.isTrue.field = listview_link
+		}
+		
+		
+		#########################################
+		# Example for your marker ###ANYMARKER###
+		#########################################
+		# available variables for .field are: 
+			# Information from the pic: picture, tstamp, filename, dirname, basename, extension
+			# Information from txt/EXIF: comments, title, subject, author, recordtime, cam_brand, cam_model
+		anymarker = TEXT
+		anymarker {
+			field = picture
+			wrap = <b>|</b>
+		}
+	}
+	
+	
+	
+	# List view settings
+	list {
+		# Constants
+		pid_list = {$plugin.wtgallery.single.pid_list}
+		order = {$plugin.wtgallery.list.order}
+		limit = {$plugin.wtgallery.list.limit}
+		width = {$plugin.wtgallery.list.width}
+		height = {$plugin.wtgallery.list.height}
+		rows = {$plugin.wtgallery.list.rows}
+		columns = {$plugin.wtgallery.list.columns}
+		metainformation = {$plugin.wtgallery.list.metainformation}
+		
+		
+		# List preview image
+		image = IMAGE
+		image {
+			# available variables for .field are: 
+				# Information from the pic: picture, tstamp, filename, dirname, basename, extension, currentfolder, picturehash, pid_single, link_single
+				# Information from txt/EXIF: comments, title, subject, author, recordtime, cam_brand, cam_model
+			file.import.field = picture
+			file.width = {$plugin.wtgallery.list.width}
+			file.height = {$plugin.wtgallery.list.height}
+			altText.field = basename
+			titleText.field = filename
+			params = class="wtgallery wtgallery_list"
+			if.isTrue.field = picture
+			
+			# link to singleview
+			imageLinkWrap = 1
+			imageLinkWrap.enable = 1
+			imageLinkWrap.typolink.parameter.field = link_single
+		}
+		
+		
+		# Text from txt file or EXIF information to current list image
+		text = COA
+		text {
+			# available variables for .field are: 
+				# Information from the pic: picture, tstamp, filename, dirname, basename, extension, currentfolder, picturehash, pid_single, link_single
+				# Information from txt/EXIF: comments, title, subject, author, recordtime, cam_brand, cam_model
+			wrap = <div class="wt_gallery_list_inner_text">|</div>
+			if.isTrue.field = title
+			
+			10 = TEXT
+			10.field = title
+			10.wrap = <div class="wt_gallery_list_inner_title">|</div>
+			10.if.isTrue.field = title
+			
+			20 = TEXT
+			20.field = comments
+			20.wrap = <div class="wt_gallery_list_inner_comments">|</div>
+			20.if.isTrue.field = comments
+		}
+		
+		
+		# Pagebrowser for listview
+		pagebrowser = HMENU
+		pagebrowser {
+			special = userfunction
+			# Available functions are: "pagemenu" and "clickmenu"
+			special.userFunc = user_wtgallery_pagebrowser->pagemenu
+			special.userFunc {
+				# clickmenu settings
+				clickmenu.previous = TEXT
+				clickmenu.previous.data = LLL:EXT:wt_gallery/pi1/locallang.xml:wtgallery_ll_pagebrowser_previous
+				clickmenu.next = TEXT
+				clickmenu.next.data = LLL:EXT:wt_gallery/pi1/locallang.xml:wtgallery_ll_pagebrowser_next
+			}
+			
+			1 = TMENU
+			1 {
+				wrap = <ul class="wtgallery_pagebrowser_list">|</ul>
+				NO.allWrap = <li>|</li>
+				ACT = 1
+				ACT.allWrap = <li>|</li>
+				ACT.ATagParams = class="act"
+			}
+		}
+		
+		
+		#########################################
+		# Example for your marker ###ANYMARKER###
+		#########################################
+		# available variables for .field are: 
+			# Information from the pic: picture, tstamp, filename, dirname, basename, extension, currentfolder, picturehash, pid_single, link_single
+			# Information from txt/EXIF: comments, title, subject, author, recordtime, cam_brand, cam_model
+		anymarker = TEXT
+		anymarker {
+			field = picture
+			wrap = <b>|</b>
+		}
+	}
+	
+	
+	
+	# Category view settings
+	category {
+		# Constants
+		order = {$plugin.wtgallery.category.order}
+		limit = {$plugin.wtgallery.category.limit}
+		width = {$plugin.wtgallery.category.width}
+		height = {$plugin.wtgallery.category.height}
+		previewpicture_order = {$plugin.wtgallery.category.previewpicture_order}
+		rows = {$plugin.wtgallery.category.rows}
+		columns = {$plugin.wtgallery.category.columns}
+		metainformation = {$plugin.wtgallery.category.metainformation}
+		forceFolder = {$plugin.wtgallery.category.forceFolder}
+		
+		
+		# Category preview image
+		image = IMAGE
+		image {
+			# available variables for .field are: 
+				# Information from the pic: picture, tstamp, filename, dirname, basename, extension, currentfolder, link_list
+				# Information from txt/EXIF: comments, title, subject, author, recordtime, cam_brand, cam_model
+			wrap = <div class="wt_gallery_category_pic">|</div>
+			file.import.field = picture
+			file.width = {$plugin.wtgallery.category.width}
+			file.height = {$plugin.wtgallery.category.height}
+			altText.field = basename
+			titleText.field = filename
+			params = class="wtgallery wtgallery_category"
+			if.isTrue.field = picture
+			
+			# link to categoryview
+			imageLinkWrap = 1
+			imageLinkWrap.enable = 1
+			imageLinkWrap.typolink.parameter.field = link_list
+		}
+		
+		
+		# Text from txt file or EXIF information to current category image
+		text = COA
+		text {
+			# available variables for .field are: 
+				# Information from the pic: picture, tstamp, filename, dirname, basename, extension, currentfolder, link_list
+				# Information from folder txt file: cat_comments, cat_title, cat_subject, cat_author, cat_recordtime, cat_cam_brand, cat_cam_model
+				# Information from txt/EXIF of currently shown picture: comments, title, subject, author, recordtime, cam_brand, cam_model
+			wrap = <div class="wt_gallery_category_inner_text">|</div>
+			if.isTrue.field = cat_comments
+			
+			10 = TEXT
+			10.field = cat_title
+			10.wrap = <div class="wt_gallery_category_inner_title">|</div>
+			10.if.isTrue.field = cat_title
+			
+			20 = TEXT
+			20.field = cat_comments
+			20.wrap = <div class="wt_gallery_category_inner_comments">|</div>
+			20.if.isTrue.field = cat_comments
+		}
+		
+		
+		# Link to the startcategory below category
+		# available variables for .field are: startcategory_link
+		startcategorylink = TEXT
+		startcategorylink {
+			wrap = <p>|</p>
+			data = LLL:EXT:wt_gallery/pi1/locallang.xml:wtgallery_ll_startcategorylink
+			typolink.parameter.field = startcategory_link
+			if.isTrue.field = startcategory_link
+		}
+		
+		
+		# Pagebrowser for categoryview
+		pagebrowser = HMENU
+		pagebrowser {
+			special = userfunction
+			# Available functions are: "pagemenu" and "clickmenu"
+			special.userFunc = user_wtgallery_pagebrowser->pagemenu
+			special.userFunc {
+				# clickmenu settings
+				clickmenu.previous = TEXT
+				clickmenu.previous.data = LLL:EXT:wt_gallery/pi1/locallang.xml:wtgallery_ll_pagebrowser_previous
+				clickmenu.next = TEXT
+				clickmenu.next.data = LLL:EXT:wt_gallery/pi1/locallang.xml:wtgallery_ll_pagebrowser_next
+			}
+			
+			1 = TMENU
+			1 {
+				wrap = <ul class="wtgallery_pagebrowser_category">|</ul>
+				NO.allWrap = <li>|</li>
+				ACT = 1
+				ACT.allWrap = <li>|</li>
+				ACT.ATagParams = class="act"
+			}
+		}
+		
+		
+		#########################################
+		# Example for your marker ###ANYMARKER###
+		#########################################
+		# available variables for .field are: 
+			# Information from the pic: picture, tstamp, filename, dirname, basename, extension, currentfolder, link_list
+			# Information from folder txt file: cat_comments, cat_title, cat_subject, cat_author, cat_recordtime, cat_cam_brand, cat_cam_model
+			# Information from txt/EXIF of currently shown picture: comments, title, subject, author, recordtime, cam_brand, cam_model
+		anymarker = TEXT
+		anymarker {
+			field = picture
+			wrap = <b>|</b>
+		}
+	}
+	
+	
+	
+	
+	
+	# Cooliris view settings
+	cooliris {
+		# Constants
+		title = {$plugin.wtgallery.cooliris.title}
+		url = {$plugin.wtgallery.cooliris.url}
+		description = {$plugin.wtgallery.cooliris.description}
+		width = {$plugin.wtgallery.cooliris.width}
+		height = {$plugin.wtgallery.cooliris.height}
+		order = {$plugin.wtgallery.cooliris.order}
+		limit = {$plugin.wtgallery.cooliris.limit}
+		swf = {$plugin.wtgallery.cooliris.swf}
+		window_width = {$plugin.wtgallery.cooliris.window_width}
+		window_height = {$plugin.wtgallery.cooliris.window_height}
+		allow_fullscreen = {$plugin.wtgallery.cooliris.allow_fullscreen}
+		allow_scriptaccess = {$plugin.wtgallery.cooliris.allow_scriptaccess}
+		noflash_message = {$plugin.wtgallery.cooliris.noflash_message}
+		flashvars = {$plugin.wtgallery.cooliris.flashvars}
+		metainformation = {$plugin.wtgallery.cooliris.metainformation}
+		
+		# path for cooliris image
+		image = COA
+		image {
+			# available variables for .field are: 
+				# Information from the pic: picture, tstamp, filename, dirname, basename, extension, currentfolder, picturehash
+				# Information from txt/EXIF of currently shown picture: comments, title, subject, author, recordtime, cam_brand, cam_model
+			10 = TEXT
+			10 {
+				data = getIndpEnv:TYPO3_SITE_URL
+			}
+			20 = IMG_RESOURCE
+			20 {
+				file.import.field = picture
+				file.width = {$plugin.wtgallery.cooliris.width}
+				file.height = {$plugin.wtgallery.cooliris.height}
+				if.isTrue.field = picture
+			}
+		}
+	}
+	
+	
+}
+
+
+
+
+# Add css file for "table style" of list and categoryview
+page.includeCSS.file3135 = EXT:wt_gallery/files/css/wtgallery_main.css
+seite.includeCSS.file3135 < page.includeCSS.file3135# COOLIRIS part for wt_gallery
+
+
+
+# add rss feed to header
+lib.wt_gallery_coolirisRSS = TEXT
+lib.wt_gallery_coolirisRSS {
+    wrap = <link rel="alternate" type="application/rss+xml" title="RSS-Feed" href="|" />
+    typolink.parameter.dataWrap = {TSFE:id},3135
+    typolink.returnLast = url
+}
+[userFunc = user_wtgallery_oncurrentpage]
+page.headerData.3135 < lib.wt_gallery_coolirisRSS
+seite.headerData.3135 < lib.wt_gallery_coolirisRSS
+[end]
+
+
+# TypeNum 3135 offers a dynamic rss feed (listview) for cooliris (piclens) - more infos at www.cooliris.com
+wtgallery_cooliris_rss = PAGE
+wtgallery_cooliris_rss {
+	typeNum = 3135
+	10 < plugin.tx_wtgallery_pi1
+	
+	config {
+		disableAllHeaderCode = 1
+		disablePrefixComment = 1
+		xhtml_cleaning = 0
+		admPanel = 0
+	}
+}
